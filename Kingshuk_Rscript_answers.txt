@@ -1,0 +1,101 @@
+> ## Load a file
+> mydata<-read.csv("hw1_data.csv")
+> ## Load a file
+> mydata<-read.csv("hw1_data.csv")
+> 
+> ##what are the column names of the dataset?
+> names(mydata)
+[1] "Ozone"   "Solar.R" "Wind"    "Temp"    "Month"   "Day"    
+> 
+> 
+> ## Load a file
+> mydata<-read.csv("hw1_data.csv")
+> 
+> ##what are the column names of the dataset?
+> names(mydata)
+[1] "Ozone"   "Solar.R" "Wind"    "Temp"    "Month"   "Day"    
+> 
+> #Extract the first 2 rows of the data frame and print them to the console. What does the output look like?
+> 
+> mydata[c(1,2),]
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+> 
+> #How many observations (i.e. rows) are in this data frame?
+> 
+> nrow(mydata)
+[1] 153
+> 
+> #Extract the last 2 rows of the data frame and print them to the console. What does the output look like?
+> 
+> mydata[c(152,153),]
+    Ozone Solar.R Wind Temp Month Day
+152    18     131  8.0   76     9  29
+153    20     223 11.5   68     9  30
+> 
+> #What is the value of Ozone in the 47th row?
+> 
+> mydata[47,]
+   Ozone Solar.R Wind Temp Month Day
+47    21     191 14.9   77     6  16
+> 
+> #How many missing values are in the Ozone column of this data frame?
+> 
+> #para 1 variable
+> sum(is.na(mydata$Ozone))
+[1] 37
+> 
+> #para toda la matriz
+> propmiss <- function(dataframe) lapply(dataframe,function(x) data.frame(nmiss=sum(is.na(x)), n=length(x), propmiss=sum(is.na(x))/length(x)))
+> propmiss(mydata)
+$Ozone
+  nmiss   n  propmiss
+1    37 153 0.2418301
+
+$Solar.R
+  nmiss   n   propmiss
+1     7 153 0.04575163
+
+$Wind
+  nmiss   n propmiss
+1     0 153        0
+
+$Temp
+  nmiss   n propmiss
+1     0 153        0
+
+$Month
+  nmiss   n propmiss
+1     0 153        0
+
+$Day
+  nmiss   n propmiss
+1     0 153        0
+
+> 
+> #What is the mean of the Ozone column in this dataset? Exclude missing values (coded as NA) from this calculation.
+> 
+> #forma 1
+> mean(mydata$Ozone,na.rm=TRUE)
+[1] 42.12931
+> 
+> #forma 2
+> sum(mydata$Ozone,na.rm=TRUE)/sum(!is.na(mydata$Ozone))
+[1] 42.12931
+> 
+> #Extract the subset of rows of the data frame where Ozone values are above 31 and Temp values are above 90. What is the mean of Solar.R in this subset?
+> 
+> mean(mydata$Solar.R [mydata$Ozone>31 & mydata$Temp>90], na.rm=TRUE)
+[1] 212.8
+> 
+> 
+> #What is the mean of "Temp" when "Month" is equal to 6? 
+> 
+> mean(mydata$Temp [mydata$Month==6], na.rm=TRUE)
+[1] 79.1
+> 
+> #What was the maximum ozone value in the month of May (i.e. Month = 5)?
+> 
+> max(mydata$Ozone [mydata$Month==5], na.rm=TRUE)
+[1] 115
