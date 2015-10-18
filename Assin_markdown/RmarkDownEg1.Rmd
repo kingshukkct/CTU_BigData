@@ -1,0 +1,12 @@
+---
+output: html_document
+---
+
+# Rmarkdown First Document
+## FirstDocument
+
+```{r}
+setwd("C:/Kingshuk/Personal/College/Fall_2015/Mathuram_BigData/Data_R/Big_Data")
+mydata<-read.csv("Ozone_data.csv")
+summary(lm(Ozone ~ Temp+Month, data = mydata))
+```
