@@ -1,0 +1,25 @@
+---
+output: word_document
+---
+
+# Rmarkdown Practice Data
+## FirstDocument
+
+##Reading data into R Question1
+
+```{r}
+setwd("C:/Kingshuk/Personal/College/Fall_2015/Mathuram_BigData/Data_R/Big_Data")
+mydata<-read.csv("Ozone_data.csv")
+
+```
+##Running the linear equation Question2
+```{r}
+summary(lm(Ozone ~ Temp+Month, data = mydata))
+```
+
+## Ozone is Directly proportional to Temp
+##Ozone is Indirectly proportional to Wind
+##& Wind impacts more than Temp -- Question3
+
+
+ 

@@ -1,5 +1,5 @@
 ---
-output: pdf_document
+output: word_document
 ---
 
 # Rmarkdown First Document
@@ -10,3 +10,4 @@ setwd("C:/Kingshuk/Personal/College/Fall_2015/Mathuram_BigData/Data_R/Big_Data")
 mydata<-read.csv("Ozone_data.csv")
 summary(lm(Ozone ~ Temp+Month, data = mydata))
 ```
+
