@@ -17,9 +17,7 @@ mydata<-read.csv("Ozone_data.csv")
 summary(lm(Ozone ~ Temp+Month, data = mydata))
 ```
 
-## Ozone is Directly proportional to Temp
-##Ozone is Indirectly proportional to Wind
-##& Wind impacts more than Temp -- Question3
+## Ozone is Directly proportional to Temp Ozone is Indirectly proportional to Wind & Wind impacts more than Temp -- Question3
 
 
  
